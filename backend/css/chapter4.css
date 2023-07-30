@@ -1,0 +1,15 @@
+.boxed {
+	width: 5rem;
+	height: 5rem;
+	background: rgb(43, 7, 241);
+	/* Xoay */
+	transform: rotate(45deg);
+
+	/* Dịch chuyển đối tượng */
+	/* transform: translateX(100%) translateY(100%) scale(2, 2) rotate(45deg); */
+	/* transform: translateX(50%) translateY(50%); */
+
+	/* transform: skewX(30deg) skewY(30deg); */
+	/* transform: skewX(30deg); */
+	transform: skewY(30deg);
+}

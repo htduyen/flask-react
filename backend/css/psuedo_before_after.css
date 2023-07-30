@@ -1,0 +1,7 @@
+.title:before {
+	content: "Ho & ten: ";
+}
+
+.title:after {
+	content: " 18 tuổi";
+}

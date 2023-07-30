@@ -1,0 +1,68 @@
+ul {
+	font-size: 2rem;
+}
+
+ul.not-span li:nth-of-type(3) {
+	color: aqua;
+}
+
+ul.not-span li:first-of-type {
+	color: blue;
+}
+
+ul.not-span li:first-child {
+	color: blueviolet;
+}
+
+ul.child-span li:first-child {
+	color: brown;
+}
+
+/* Combinators */
+h3.combinator + h4.title {
+	color: blue;
+}
+
+/* Cùng cấp nhưng không nhất thiết phải liền kề */
+h3.combinator ~ h5.title2 {
+	color: rgb(229, 17, 248);
+}
+
+/* CSS nang cao */
+a {
+	display: block;
+}
+/* Query attribute của một tag sử dụng regex */
+a[href^="http"] {
+	color: aqua;
+}
+a[href$=".vn"] {
+	color: rgb(235, 99, 8);
+}
+a[href*="book"] {
+	color: rgb(236, 12, 135);
+}
+
+/* Ký tự đầu tiên | hàng đầu tiên */
+p.first-letter::first-letter {
+	color: darkblue;
+}
+p.first-line::first-line {
+	color: rgb(0, 139, 12);
+}
+
+/* Transtion */
+.boxed {
+	font-size: 3rem;
+	display: inline-block;
+	transition: background-color 2s linear;
+	/* Trabsition cho bg + text color */
+	/* transition: background-color 2s linear, color 2s ease-in-out;
+	transition: all 2s linear; */
+	/* transition-delay: 2s; */
+}
+.boxed:hover {
+	color: brown;
+	text-shadow: 3px 3px 3px rgb(43, 37, 37);
+	background-color: rgb(22, 75, 252);
+}

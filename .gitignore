@@ -5,7 +5,7 @@
 /ui/build
 /ui/package-lock.json
 /.pnp
-.pnp.js
+.pnp.jsz`
 
 # testing
 /coverage
