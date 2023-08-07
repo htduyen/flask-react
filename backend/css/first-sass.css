@@ -1,0 +1,24 @@
+.header {
+  background-color: aquamarine;
+  padding: 2rem 1rem;
+}
+.header-left {
+  font-size: 20px;
+}
+
+.container {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  background-color: #000000;
+}
+.container .boxing {
+  width: 5rem;
+  height: 5rem;
+  background-color: blue;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*# sourceMappingURL=first-sass.css.map */

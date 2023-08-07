@@ -1,0 +1,59 @@
+.dropdown {
+	width: 20rem;
+	position: relative;
+	margin: 2rem auto;
+
+	&-select {
+		color: white;
+		background-color: #3b5efd;
+		padding: 1rem;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	&-text {
+		margin-left: 2rem;
+	}
+
+	&-caret {
+		margin-left: auto;
+	}
+
+	&-item {
+		padding: 1rem;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		&:not(:last-child) {
+			border-bottom: 2px solid gray;
+		}
+
+		border-left: 3px solid transparent;
+
+		&:hover {
+			border-left-color: #3b5efd;
+		}
+	}
+
+	&-list {
+		margin-top: 1rem;
+		border-radius: 4px;
+		box-shadow: 0 0 10px 0 gray;
+		position: relative;
+
+		&:before {
+			content: "";
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid rgb(255, 255, 255);
+			position: absolute;
+			width: 0;
+			height: 0;
+			top: 0;
+			right: 2rem;
+			transform: translateY(-100%);
+		}
+	}
+}
