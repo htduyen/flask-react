@@ -1,0 +1,78 @@
+body {
+	box-sizing: border-box;
+}
+
+@mixin flex(
+	$dicrection: row,
+	$align: flex-start,
+	$justify: flex-start,
+	$wrap: nowrap
+) {
+	display: flex;
+	flex-direction: $dicrection;
+	align-items: $align;
+	justify-content: $justify;
+	flex: $wrap;
+}
+
+.post {
+	&__list {
+		@include flex(row, stretch, flex-start, nowrap);
+		padding: 1rem;
+		margin-left: -2rem;
+	}
+
+	&__item {
+		margin-left: 2rem;
+		width: calc(33.33% - 2rem);
+	}
+
+	&__image {
+		width: 100%;
+		height: 20rem;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 1rem 1rem 0 0;
+	}
+
+	&__content {
+		@include flex(column, flex-start, space-between, nowrap);
+		padding: 1rem;
+		height: calc(100% - 22rem);
+		background-color: rgb(241, 241, 240);
+		border-radius: 0 0 1rem 1rem;
+	}
+
+	&__title {
+		padding: 1rem;
+	}
+
+	&__author {
+		width: 5rem;
+		height: 5rem;
+		border-radius: 5rem;
+		object-fit: cover;
+		// margin-top: auto;
+		// Parent: có thể flex-start
+		// Phải lad display flex
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.post {
+		&__list {
+			display: block;
+			width: 100%;
+			// flex-direction: column;
+			background-color: antiquewhite;
+			margin: 0;
+			padding: 0;
+		}
+
+		&__image {
+			width: 100%;
+			height: auto;
+			border-radius: 4px 4px 0 0;
+		}
+	}
+}
