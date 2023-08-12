@@ -1,0 +1,89 @@
+@mixin flex(
+	$dicrection: row,
+	$align: flex-start,
+	$justify: flex-start,
+	$wrap: nowrap
+) {
+	display: flex;
+	flex-direction: $dicrection;
+	align-items: $align;
+	justify-content: $justify;
+	flex-wrap: $wrap;
+}
+body {
+	box-sizing: border-box;
+}
+
+.author {
+	max-width: 1000px;
+	height: 500px;
+	margin: 1rem auto;
+	border-radius: 1rem;
+	@include flex(row, stretch);
+	overflow: hidden;
+
+	&__image {
+		object-fit: cover;
+		object-position: left;
+	}
+
+	&__content {
+		background-color: rgb(214, 203, 203);
+		padding: 1rem;
+		line-height: 1.8;
+	}
+
+	&__name {
+		text-transform: capitalize;
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+	&__contact,
+	&-social {
+		@include flex();
+	}
+
+	&__contact {
+		padding-top: 1rem;
+	}
+
+	&-social {
+		font-size: 2rem;
+		color: black;
+	}
+
+	&-social__item {
+		padding-left: 1rem;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.author {
+		&__image {
+			width: 35%;
+			height: 100%;
+		}
+		&__content {
+			width: 65%;   
+		}
+	}
+}
+
+@media screen and (max-width: 767px){
+	.author {
+		flex-direction: column;
+		height: auto;
+		margin: 1rem;
+
+		&__image {
+			height: 20rem;
+			border-radius: 1rem 1rem 0 0;
+		}
+		
+		&__content {
+			border-radius: 0 0 1rem 1rem;
+			padding: 1rem 1rem;
+		}
+	}
+
+}

@@ -1,0 +1,74 @@
+body {
+  box-sizing: border-box;
+}
+
+.author {
+  max-width: 1000px;
+  height: 500px;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.author__image {
+  object-fit: cover;
+  object-position: left;
+}
+.author__content {
+  background-color: rgb(214, 203, 203);
+  padding: 1rem;
+  line-height: 1.8;
+}
+.author__name {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.author__contact, .author-social {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+.author__contact {
+  padding-top: 1rem;
+}
+.author-social {
+  font-size: 2rem;
+  color: black;
+}
+.author-social__item {
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .author__image {
+    width: 35%;
+    height: 100%;
+  }
+  .author__content {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .author {
+    flex-direction: column;
+    height: auto;
+    margin: 1rem;
+  }
+  .author__image {
+    height: 20rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .author__content {
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem 1rem;
+  }
+}
+
+/*# sourceMappingURL=card-author.css.map */
