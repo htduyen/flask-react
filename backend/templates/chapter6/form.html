@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<link rel="stylesheet" href="../../css/form.css" />
+	</head>
+	<body>
+		<form action="" autocomplete="on">
+			<div class="checkbox">
+				<input
+					type="checkbox"
+					name="name"
+					id="name"
+					class="checkbox__input"
+				/>
+				<label for="name" class="checkbox__label"
+					>my name is Duyen</label
+				>
+			</div>
+
+			<!-- Cusom radio -->
+			<div class="radio">
+				<input
+					type="radio"
+					name="male"
+					id="male"
+					class="radio__input"
+				/>
+				<label for="male" class="radio__label">Male</label>
+			</div>
+
+			<!-- Custom file -->
+			<div class="file">
+				<input type="file" class="file__input" id="file__input" />
+				<label class="file__label" for="file__input"
+					><i class="fa fa-upload"></i
+				></label>
+			</div>
+
+			<!-- Checkbox 2 -->
+			<div class="checkbox2">
+				<input
+					type="checkbox"
+					name="name2"
+					id="name2"
+					class="checkbox2__input"
+				/>
+				<label for="name2" class="checkbox2__label">
+					<div class="checkbox2__spin"></div>
+				</label>
+			</div>
+
+			<!-- Custom input focus -->
+			<input class="input-style" placeholder="Enter name">
+			</input>
+
+			<!-- Custom buttom -->
+			<input type="button" class="btn-custom" value="Hover me">
+		</form>
+	</body>
+</html>

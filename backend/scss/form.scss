@@ -1,0 +1,192 @@
+body {
+	box-sizing: border-box;
+}
+
+@mixin size($width: 100%, $height: 100%) {
+	width: $width;
+	height: $height;
+}
+
+@mixin flex(
+	$align: flex-start,
+	$justify: flex-start,
+	$dicrection: row,
+	$wrap: nowrap
+) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $dicrection;
+	flex-wrap: $wrap;
+}
+
+.checkbox {
+	font-size: 2rem;
+	margin-top: 2rem;
+	&__label {
+		position: relative;
+		padding-left: 4.5rem;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			padding: 1.5rem;
+			border: 2px solid gray;
+			border-radius: 3px;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 5%;
+			left: 7px;
+			transform: translateY(-50%);
+			width: 2rem;
+			height: 1rem;
+			transform: rotate(-45deg);
+			border-left: 4px solid rgb(42, 250, 0);
+			border-bottom: 4px solid rgb(22, 255, 1);
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.2s linear;
+		}
+	}
+
+	&__input {
+		display: none;
+
+		&:checked + .checkbox__label::after {
+			opacity: 1;
+			visibility: visible;
+		}
+		&:checked + .checkbox__label::before {
+			border-color: green;
+		}
+	}
+}
+
+.radio {
+	position: relative;
+	margin: 4rem 2rem;
+	padding-left: 4.5rem;
+
+	&__input {
+		display: none;
+	}
+
+	&__label {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			@include size(2.5rem, 2.5rem);
+			border-radius: 50%;
+			background-color: #eee;
+			box-shadow: 0 0 0 4px #eee, 0 0 0 6px #b7c1cb;
+			transition: all 0.25s ease;
+		}
+	}
+	&__input:checked + .radio__label::before {
+		background-color: pink;
+		box-shadow: 0 0 0 4px rgb(255, 255, 255), 0 0 0 6px pink;
+	}
+}
+
+.file {
+	@include flex(center, center);
+	@include size(5rem, 5rem);
+	background-color: aquamarine;
+	position: relative;
+
+	&__input {
+		display: none;
+	}
+
+	&__label {
+		color: white;
+		cursor: pointer;
+	}
+}
+
+// Checkbox 2
+.checkbox2 {
+	margin: 5rem;
+
+	&__input {
+		display: none;
+		&:checked + .checkbox2__label {
+			background-color: pink;
+
+			.checkbox2__spin {
+				transform: translateX(50px);
+			}
+		}
+	}
+
+	&__label {
+		@include size(10rem, 5rem);
+		background-color: dimgray;
+		border-radius: 2.5rem;
+		display: inline-block;
+		padding: 0.5rem;
+		transition: all 0.25s ease-in-out;
+	}
+
+	&__spin {
+		@include size(4rem);
+		background-color: #eee;
+		border-radius: 50%;
+		transition: all 0.25s ease-in-out;
+	}
+}
+
+//  Custom Input
+
+.input-style {
+	width: 70%;
+	padding: 2rem;
+	margin: 3rem;
+	border-radius: 4px;
+	outline: none;
+	border: 1px solid gray;
+
+	&::-webkit-input-placeholder {
+		color: gray;
+	}
+
+	&:focus {
+		border-color: pink;
+		box-shadow: 0 0 2px 1px pink;
+	}
+}
+
+// Custom button
+.btn-custom {
+	display: block;
+	margin: 3rem;
+	padding: 2rem;
+	border: none;
+	background-color: #fd607d;
+	color: white;
+	font-weight: 600;
+	border-radius: 4px;
+	transition: all 0.25s ease-in-out;
+	box-shadow: 0 4px 0 0 rgb(161, 1, 28);
+	cursor: pointer;
+
+	&:hover {
+		background-color: #ffe1de;
+		color: #fd607d;
+	}
+
+	&:active {
+		transform: translateY(2px);
+		box-shadow: 0 2px 0 0 rgb(241, 40, 73);
+	}
+}
