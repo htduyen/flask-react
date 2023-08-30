@@ -1,0 +1,270 @@
+@mixin flex(
+	$align: flex-start,
+	$justify: flex-start,
+	$dicrection: row,
+	$wrap: nowrap
+) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $dicrection;
+	flex-wrap: $wrap;
+}
+
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+$primary: #fa4c53;
+$secondary: #fd9c84;
+$text-color: #291667;
+
+body {
+	background-image: linear-gradient(
+		to right,
+		rgb(235, 226, 226),
+		rgb(165, 153, 153)
+	);
+	width: 100vw;
+	min-height: 100vh;
+	padding: 3rem;
+}
+
+.signup {
+	@include size(100%, 100%);
+	@include flex(stretch, space-between);
+	align-items: stretch;
+	padding: 2rem;
+	background-color: #f3f7ff;
+	border-radius: 10px;
+
+	&__content,
+	&__image {
+		width: calc(50% - 2rem);
+	}
+
+	&__heading {
+		font-weight: 700;
+		margin-bottom: 2rem;
+		font-size: 1.8rem;
+		color: rgb(73, 10, 247);
+	}
+
+	&__caption {
+		color: rgb(255, 1, 1);
+		font-weight: bold;
+		position: relative;
+		padding-left: 4rem;
+		margin-bottom: 2rem;
+
+		&::before {
+			content: "";
+			top: 50%;
+			left: 0;
+			position: absolute;
+			transform: translateY(-50%);
+			@include size(3rem, 2px);
+			background-color: red;
+			// padding-left: 3rem;
+		}
+	}
+
+	&-social {
+		@include flex(stretch, space-between);
+
+		&__item {
+			@include size(calc(50% - 1rem));
+			@include flex(center, center);
+			margin-bottom: 6rem;
+			padding: 1.5rem 2.5rem;
+			border: 1px solid #eee;
+			cursor: pointer;
+			color: $text-color;
+			border-radius: 6px;
+
+			i {
+				margin-right: 1rem;
+			}
+		}
+	}
+
+	&-form {
+		color: $text-color;
+		&__label {
+			margin-bottom: 1rem;
+			display: inline-block;
+			transform: translateX(1rem);
+			cursor: pointer;
+		}
+		&__input {
+			display: block;
+			padding: 1.5rem 2rem;
+			border-radius: 6px;
+			background-color: #eee;
+			border: 1px solid #fafbff;
+			outline: none;
+			width: 100%;
+			transition: all 0.25s linear;
+
+			&:focus {
+				border-color: $primary;
+
+				& + .signup-form__check {
+					background-color: $primary;
+				}
+			}
+		}
+
+		&__validate {
+			position: relative;
+
+			input {
+				padding-right: 5rem;
+			}
+		}
+
+		&__check {
+			position: absolute;
+			top: 50%;
+			right: 1rem;
+			transform: translateY(-50%);
+			transition: all 0.25s linear;
+			@include size(3rem);
+			@include flex(center, center);
+			background-color: #eee;
+			border-radius: 8px;
+			color: white;
+			padding-left: 2px;
+		}
+
+		&__row {
+			@include flex(center, space-between);
+			margin-bottom: 2rem;
+			.signup-form__group {
+				width: calc(50% - 1.5rem);
+				margin-bottom: 2rem;
+			}
+		}
+
+		&__term {
+			margin-top: 2rem;
+			input {
+				display: none;
+
+				&:checked + label::before {
+					background-color: $primary;
+					border-width: 0;
+				}
+
+				&:checked + label::after {
+					opacity: 1;
+					visibility: visible;
+					border-left: 2px solid rgb(255, 255, 255);
+					border-bottom: 2px solid rgb(255, 255, 255);
+				}
+			}
+			label {
+				position: relative;
+				padding-left: 3rem;
+				cursor: pointer;
+
+				&::before {
+					content: "";
+					@include size(2rem);
+					position: absolute;
+					top: 0;
+					left: 0;
+					border-width: 0;
+					// border: 1px solid black;
+					background-color: #eee;
+					border-radius: 2px;
+				}
+
+				&::after {
+					content: "";
+					@include size(1.6rem, 0.8rem);
+					position: absolute;
+					top: 20%;
+					left: 1px;
+					transform: rotate(-45deg);
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+		}
+		&__submit {
+			margin: 2rem 0;
+			@include flex(center, center);
+			cursor: pointer;
+			@include size(4rem);
+			border-radius: 8px;
+			background-color: $primary;
+			color: #eee;
+			border-width: 0;
+			box-shadow: 0 10px 10px 0 rgba($primary, 0.4);
+		}
+	}
+
+	&__image img {
+		@include size(100%);
+		object-fit: cover;
+		object-position: center;
+	}
+	&__already {
+		color: $text-color;
+
+		a {
+			color: $primary;
+		}
+	}
+}
+
+@media screen and (max-width: 1439px) {
+	.signup {
+		&__content {
+			width: calc(60% - 1rem);
+		}
+		&__image {
+			width: calc(40% - 1rem);
+		}
+	}
+}
+
+@media screen and (max-width: 1279px) {
+	.signup {
+		&__content {
+			width: 100%;
+		}
+		&__image {
+			display: none;
+		}
+	}
+}
+@media screen and (max-width: 729px) {
+	body {
+		padding: 1rem;
+	}
+	.signup {
+		padding: 1rem;
+
+		&-social {
+			@include flex(center, center, column);
+			&__item {
+				width: 100%;
+				margin-bottom: 1rem;
+				border-color: #b2a0ec;
+			}
+		}
+
+		&-form {
+			&__row {
+				flex-direction: column;
+
+				.signup-form__group {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

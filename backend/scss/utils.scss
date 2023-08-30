@@ -1,0 +1,17 @@
+@mixin flex(
+	$dicrection: row,
+	$align: flex-start,
+	$justify: flex-start,
+	$wrap: nowrap
+) {
+	display: flex;
+	flex-direction: $dicrection;
+	align-items: $align;
+	justify-content: $justify;
+	flex-wrap: $wrap;
+}
+
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}

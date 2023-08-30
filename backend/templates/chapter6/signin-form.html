@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<!-- <link rel="stylesheet" href="../../css/utils.css" /> -->
+		<link rel="stylesheet" href="../../css/signin-form.css" />
+	</head>
+	<body>
+		<div class="signup">
+			<div class="signup__content">
+				<h1 class="signup__heading">Sign up</h1>
+				<h2 class="signup__caption">Sign up with</h2>
+				<div class="signup-social">
+					<div class="signup-social__item">
+						<i class="fab fa-google"></i>
+						<span>Sign up with google</span>
+					</div>
+					<div class="signup-social__item">
+						<i class="fab fa-facebook"></i>
+						<span>Sign up with Facebook</span>
+					</div>
+				</div>
+				<!-- form -->
+				<form action="#" class="signup-form" autocomplete="off">
+					<div class="signup-form__row">
+						<!-- Name -->
+						<div class="signup-form__group">
+							<label for="name" class="signup-form__label"
+								>Name</label
+							>
+							<input
+								type="text"
+								id="name"
+								class="signup-form__input"
+								required
+								placeholder="Enter username"
+							/>
+						</div>
+						<!-- Email -->
+						<div class="signup-form__group">
+							<label for="email" class="signup-form__label"
+								>Email</label
+							>
+							<input
+								type="email"
+								id="email"
+								class="signup-form__input"
+								required
+								placeholder="Enter email address"
+							/>
+						</div>
+					</div>
+					<!-- Password -->
+					<div class="signup-form__group">
+						<label for="password" class="signup-form__label"
+							>Password</label
+						>
+						<div class="signup-form__validate">
+							<input
+								type="password"
+								id="password"
+								class="signup-form__input"
+								required
+								placeholder="Enter password"
+								minlength="8"
+							/>
+							<div class="signup-form__check">
+								<i class="fa fa-check"></i>
+							</div>
+						</div>
+					</div>
+					<!-- Term -->
+					<div class="signup-form__term">
+						<input type="checkbox" id="term" class="" />
+						<label for="term">I argree</label>
+					</div>
+					<button type="submit" class="signup-form__submit">
+						<i class="fa fa-arrow-right"></i>
+					</button>
+					<p class="signup__already">
+						Already have an account <a href="#">Sign in</a>
+					</p>
+				</form>
+			</div>
+			<div class="signup__image">
+				<img
+					src="https://images.unsplash.com/photo-1636819488537-a9b1ffb315ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJvY2tldHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+					alt=""
+				/>
+			</div>
+		</div>
+	</body>
+</html>
