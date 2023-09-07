@@ -1,0 +1,116 @@
+$text-color: #8c94a7;
+$text-primary: #00aefd;
+
+@mixin flex(
+	$align: flex-start,
+	$justify: flex-start,
+	$dicrection: row,
+	$wrap: nowrap
+) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $dicrection;
+	flex-wrap: $wrap;
+}
+
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+table {
+	width: 100%;
+
+	th {
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+
+	th,
+	td {
+		color: #8c94a7;
+		text-align: center;
+		font-size: 1.4rem;
+		padding: 2rem;
+	}
+
+	thead tr {
+		border-bottom: 1px solid #333;
+	}
+	.desc {
+		text-overflow: ellipsis;
+		max-width: 15rem;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.status {
+		text-align: center;
+		padding: 1rem 3rem;
+		font-weight: 600;
+		border-radius: 2rem;
+
+		&--active {
+			color: green;
+			background-color: rgba($color: green, $alpha: 0.2);
+		}
+	}
+
+	.actions {
+		display: flex;
+		&-icon {
+			cursor: pointer;
+			margin: 0 5px;
+		}
+	}
+
+	.toggle {
+		input {
+			display: none;
+
+			&:checked + .toggle-label {
+				background-color: $text-primary;
+
+				&::before {
+					background-color: $text-primary;
+					transform: translate(2rem, -50%);
+				}
+			}
+		}
+
+		&-label {
+			width: 4rem;
+			height: 5px;
+			background-color: $text-color;
+			display: inline-block;
+			border-radius: 2rem;
+			position: relative;
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+
+			&::before {
+				content: "";
+				@include size(2rem);
+				background-color: $text-color;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				border-radius: 2rem;
+				transition: all 0.2s ease-in-out;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1279px) {
+	.table {
+		width: 100%;
+		overflow-x: auto;
+
+		// Hide scrollbar table
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}

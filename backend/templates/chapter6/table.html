@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Table</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="../../css/reset.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<link rel="stylesheet" href="../../css/table.css" />
+	</head>
+	<body>
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th><input type="checkbox" name="" id="" /></th>
+						<th>Tipo</th>
+						<th>Codio</th>
+						<th>Desc</th>
+						<th>Client</th>
+						<th>Marca</th>
+						<th>Active</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="checkbox" name="" id="" /></td>
+						<td><i class="fa fa-truck"></i></td>
+						<td>PR-0045</td>
+						<td>
+							<p class="desc">
+								Lorem ipsum dolor, sit amet consectetur
+								adipisicing elit. Incidunt, esse.
+							</p>
+						</td>
+						<td>HP</td>
+						<td>
+							<div class="toggle">
+								<input
+									type="checkbox"
+									name="client"
+									id="toggle-client"
+									class="toggle-input"
+								/>
+								<label
+									for="toggle-client"
+									class="toggle-label"
+								></label>
+							</div>
+						</td>
+						<td>
+							<div class="toggle">
+								<input
+									type="checkbox"
+									name="active"
+									id="toggle-active"
+									class="toggle-input"
+								/>
+								<label
+									for="toggle-active"
+									class="toggle-label"
+								></label>
+							</div>
+						</td>
+						<td>
+							<span class="status status--active">Active</span>
+						</td>
+						<td>
+							<div class="actions">
+								<i class="fa fa-pen actions-icon"></i>
+								<i class="fa fa-trash actions-icon"></i>
+								<i class="fa fa-save actions-icon"></i>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

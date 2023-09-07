@@ -1,0 +1,84 @@
+table {
+  width: 100%;
+}
+table th {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+table th,
+table td {
+  color: #8c94a7;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 2rem;
+}
+table thead tr {
+  border-bottom: 1px solid #333;
+}
+table .desc {
+  text-overflow: ellipsis;
+  max-width: 15rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+table .status {
+  text-align: center;
+  padding: 1rem 3rem;
+  font-weight: 600;
+  border-radius: 2rem;
+}
+table .status--active {
+  color: green;
+  background-color: rgba(0, 128, 0, 0.2);
+}
+table .actions {
+  display: flex;
+}
+table .actions-icon {
+  cursor: pointer;
+  margin: 0 5px;
+}
+table .toggle input {
+  display: none;
+}
+table .toggle input:checked + .toggle-label {
+  background-color: #00aefd;
+}
+table .toggle input:checked + .toggle-label::before {
+  background-color: #00aefd;
+  transform: translate(2rem, -50%);
+}
+table .toggle-label {
+  width: 4rem;
+  height: 5px;
+  background-color: #8c94a7;
+  display: inline-block;
+  border-radius: 2rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+table .toggle-label::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background-color: #8c94a7;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 1279px) {
+  .table {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .table::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=table.css.map */
