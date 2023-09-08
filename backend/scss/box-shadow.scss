@@ -1,0 +1,24 @@
+@mixin flex(
+	$align: flex-start,
+	$justify: flex-start,
+	$dicrection: row,
+	$wrap: nowrap
+) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $dicrection;
+	flex-wrap: $wrap;
+}
+
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+.box {
+	@include size(3rem);
+	background-color: blue;
+
+    box-shadow: 0 4rem 0 0 red, 0 8rem 0 0 pink, 4rem 0 0 0 red, 8rem 0 0 0 pink, 4rem 4rem 0 0 blue, 8rem 4rem 0 0 yellow, 4rem 8rem 0 0 yellow, 8rem 8rem 0 0 blue;
+}

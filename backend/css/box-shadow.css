@@ -1,0 +1,8 @@
+.box {
+  width: 3rem;
+  height: 3rem;
+  background-color: blue;
+  box-shadow: 0 4rem 0 0 red, 0 8rem 0 0 pink, 4rem 0 0 0 red, 8rem 0 0 0 pink, 4rem 4rem 0 0 blue, 8rem 4rem 0 0 yellow, 4rem 8rem 0 0 yellow, 8rem 8rem 0 0 blue;
+}
+
+/*# sourceMappingURL=box-shadow.css.map */

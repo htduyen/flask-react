@@ -1,0 +1,56 @@
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+
+
+.nav {
+	margin: 0 auto;
+
+	&__header {
+		// color: white;
+		padding: 1rem;
+		position: relative;
+		@include size(80vw, 700px);
+		color: white;
+
+		&:before {
+			content: "";
+			@include size(80vw, 700px);
+			position: absolute;
+			background-color: rgb(0, 26, 255);
+			background-image: linear-gradient(
+				to right bottom,
+				rgb(27, 27, 252),
+				rgb(0, 39, 122)
+			);
+			transform: skewY(-5deg);
+			top: -7rem;
+			left: 0;
+			z-index: -1;
+		}
+	}
+	.content {
+		@include size(80vw, 300px);
+		background-color: rgb(252, 138, 138);
+		color: black;
+        position: relative;
+
+        &:before {
+			content: "";
+			@include size(100%);
+			position: absolute;
+			background-color: rgb(0, 26, 255);
+			background-image: linear-gradient(
+				to right bottom,
+				rgb(27, 27, 252),
+				rgb(0, 39, 122)
+			);
+			transform: skewY(-5deg);
+			top: -7rem;
+			left: 0;
+			z-index: -1;
+		}
+	}
+}

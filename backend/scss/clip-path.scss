@@ -1,0 +1,85 @@
+@mixin flex(
+	$align: flex-start,
+	$justify: flex-start,
+	$dicrection: row,
+	$wrap: nowrap
+) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $dicrection;
+	flex-wrap: $wrap;
+}
+
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+.container {
+	@include size(80vw, 700px);
+	background-color: blue;
+	margin: 0 auto;
+	clip-path: polygon(0 0, 100% 0, 100% 70%, 40% 85%, 37% 90%, 0 100%);
+	background-image: linear-gradient(
+		to right bottom,
+		rgb(50, 50, 223),
+		rgb(7, 7, 253)
+	);
+	display: none;
+}
+
+.main {
+	@include size(80vw, 700px);
+	background-color: blue;
+	margin: 0 auto;
+	background-image: linear-gradient(
+		to right bottom,
+		rgb(50, 50, 223),
+		rgb(7, 7, 253)
+	);
+	clip-path: polygon(
+		0 15%,
+		70% 8%,
+		75% 4%,
+		100% 0,
+		100% 70%,
+		40% 85%,
+		37% 90%,
+		0 100%
+	);
+	@supports (
+		clip-path:
+			polygon(
+				0 15%,
+				70% 8%,
+				75% 4%,
+				100% 0,
+				100% 70%,
+				40% 85%,
+				37% 90%,
+				0 100%
+			)
+	) {
+		clip-path: polygon(
+			0 15%,
+			70% 8%,
+			75% 4%,
+			100% 0,
+			100% 70%,
+			40% 85%,
+			37% 90%,
+			0 100%
+		);
+		-webkit-clip-path: polygon(
+			0 15%,
+			70% 8%,
+			75% 4%,
+			100% 0,
+			100% 70%,
+			40% 85%,
+			37% 90%,
+			0 100%
+		);
+	}
+}
