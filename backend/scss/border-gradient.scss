@@ -1,0 +1,17 @@
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+.box {
+	@include size(10rem, 4rem);
+	background-image: linear-gradient(to right bottom, rgb(138, 138, 247), blue);
+	border-radius: 10rem;
+	padding: 10px;
+
+	&__child {
+		@include size(100%);
+		background-color: white;
+		border-radius: inherit;
+	}
+}

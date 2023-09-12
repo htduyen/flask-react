@@ -1,0 +1,47 @@
+@mixin size($width: 100%, $height: $width) {
+	width: $width;
+	height: $height;
+}
+body {
+	background-color: blue;
+	padding: 5rem;
+}
+.loading {
+	position: relative;
+	@include size(10rem);
+	// background-color: aqua;
+	margin: 0 auto;
+
+	div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include size(100%);
+		transform: rotate(calc(var(--value) * 45deg));
+		// background-color: blue;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include size(1rem);
+			border: 4px solid green;
+			border-radius: 1rem;
+			animation: loading 1s infinite;
+			animation-delay: calc(var(--value) * 0.125s);
+			animation-timing-function: linear;
+			// animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+			// Change color
+			filter: hue-rotate(calc(var(--value) * 45deg));
+		}
+	}
+}
+
+@keyframes loading {
+	to {
+		transform: scale(0);
+		opacity: 0.3;
+	}
+}
