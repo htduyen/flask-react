@@ -2,6 +2,19 @@
 	width: $width;
 	height: $height;
 }
+
+@mixin flex(
+	$align: flex-start,
+	$justify: flex-start,
+	$dicrection: row,
+	$wrap: nowrap
+) {
+	display: flex;
+	align-items: $align;
+	justify-content: $justify;
+	flex-direction: $dicrection;
+	flex-wrap: $wrap;
+}
 body {
 	background-color: blue;
 	padding: 5rem;
